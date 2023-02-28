@@ -8,14 +8,14 @@ const useStyles = createStyles((theme) => ({
 	root: {},
 
 	contactText: {
-		color: "#fff",
+		color: theme.colorScheme === "dark" ? "#fff" : "#000",
 		marginLeft: "5px",
 	},
 
 	mailText: {
 		marginLeft: "5px",
 		textDecoration: "none",
-		color: "#fff",
+		color: theme.colorScheme === "dark" ? "#fff" : "#000",
 	},
 }));
 
