@@ -11,7 +11,12 @@ export default function index({}: Props) {
 	const { classes } = useStyles();
 
 	return (
-		<section id="skill">
+		<section
+			id="skill"
+			data-aos="fade-right"
+			data-aos-offset="300"
+			data-aos-easing="ease-in-sine"
+		>
 			<Container size={"xl"} className={classes.root}>
 				<Flex
 					direction={{ base: "column" }}

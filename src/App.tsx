@@ -10,6 +10,8 @@ import {
 import { customTheme } from "./theme";
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import HeaderMenu from "./layouts/header";
 import Home from "./layouts/home";
@@ -54,6 +56,8 @@ function App() {
 		themeStore.subscribe((state) => {
 			setColorScheme(state.theme);
 		});
+
+		AOS.init();
 	}, []);
 
 	return (

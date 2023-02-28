@@ -30,7 +30,12 @@ export default function index({}: Props) {
 	const { classes } = useStyles();
 
 	return (
-		<section id="port">
+		<section
+			id="port"
+			data-aos="fade-right"
+			data-aos-offset="300"
+			data-aos-easing="ease-in-sine"
+		>
 			<Container size={"xl"} mt={30} className={classes.root}>
 				<Flex
 					direction={{ base: "column" }}

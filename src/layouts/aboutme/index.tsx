@@ -7,9 +7,19 @@ import {
 	Container,
 	createStyles,
 	Space,
+	keyframes,
 } from "@mantine/core";
 
 type Props = {};
+
+const clipText = keyframes({
+	"0%": {
+		clipPath: "inset(0 100% 0 0)",
+	},
+	"100%": {
+		clipPath: "inset(0 0 0 0)",
+	},
+});
 
 const useStyles = createStyles((theme) => ({
 	root: {
@@ -53,13 +63,26 @@ const useStyles = createStyles((theme) => ({
 		textDecoration: "none",
 		color: theme.colorScheme === "dark" ? "#fff" : "#000",
 	},
+
+	developEffect: {
+		animation: `${clipText} 3s ease infinite`,
+	},
+
+	abouteMeEffect: {
+		animation: `${clipText} 3s ease 1`,
+	},
 }));
 
 export default function index({}: Props) {
-	const { classes } = useStyles();
+	const { classes, cx } = useStyles();
 
 	return (
-		<section id="about">
+		<section
+			id="about"
+			data-aos="fade-right"
+			data-aos-offset="300"
+			data-aos-easing="ease-in-sine"
+		>
 			<Flex
 				gap="md"
 				justify="center"
@@ -67,7 +90,7 @@ export default function index({}: Props) {
 				direction="column"
 				className={classes.root}
 			>
-				<Text fw={700} size="xl">
+				<Text fw={700} size="xl" className={classes.developEffect}>
 					Developer
 				</Text>
 
@@ -79,11 +102,13 @@ export default function index({}: Props) {
 					<Text fw={700} className={classes.myName} fz={50}>
 						Natdanai Thannin
 					</Text>
-					<Container size={"sm"} className={classes.box}>
-						Two years ago, I develop FiveM game on my passion and passionate
-						about coding and software development, I love to develop myself and
-						my skills all the time. I'm always ready for learning any new
-						programming languages and I have the courage to face the problem.
+					<Container size={"sm"} className={cx(classes.box)}>
+						<span className={classes.abouteMeEffect}>
+							Two years ago, I develop FiveM game on my passion and passionate
+							about coding and software development, I love to develop myself
+							and my skills all the time. I'm always ready for learning any new
+							programming languages and I have the courage to face the problem.
+						</span>
 					</Container>
 					<Space h="md" />
 					<a
