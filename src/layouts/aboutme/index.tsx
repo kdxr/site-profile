@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faFile } from "@fortawesome/free-solid-svg-icons";
 import {
 	Flex,
 	Image,
@@ -50,16 +51,17 @@ const useStyles = createStyles((theme) => ({
 		color: theme.colorScheme === "dark" ? "#e3ceeb" : "#201e21",
 	},
 
-	gitIcon: {
+	icon: {
 		transition: "color 0.5s",
 		cursor: "pointer",
+		margin: "0 5px",
 
 		"&:hover": {
 			color: "#e3d5a6",
 		},
 	},
 
-	github: {
+	btnIcon: {
 		textDecoration: "none",
 		color: theme.colorScheme === "dark" ? "#fff" : "#000",
 	},
@@ -114,12 +116,23 @@ export default function index({}: Props) {
 					<a
 						href="https://github.com/kdxr"
 						target={"_blank"}
-						className={classes.github}
+						className={classes.btnIcon}
 					>
 						<FontAwesomeIcon
 							icon={faGithub}
 							size={"xl"}
-							className={classes.gitIcon}
+							className={classes.icon}
+						/>
+					</a>
+					<a
+						href="./assets/cv.pdf"
+						target={"_blank"}
+						className={classes.btnIcon}
+					>
+						<FontAwesomeIcon
+							icon={faFile}
+							size={"xl"}
+							className={classes.icon}
 						/>
 					</a>
 				</Container>
