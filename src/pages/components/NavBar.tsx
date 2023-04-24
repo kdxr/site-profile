@@ -9,18 +9,18 @@ import { motion } from "framer-motion";
 interface CustomLinkDTO {
 	href: string;
 	label: string;
-	class?: string;
+	className?: string;
 }
 
-const CustomLink = (data: CustomLinkDTO) => {
+const CustomLink = ({ href, label, className }: CustomLinkDTO) => {
 	const router = useRouter();
 
 	return (
-		<Link href={data.href} className={`${data.class ?? ""} relative group`}>
-			{data.label}
+		<Link href={href} className={`${className ?? ""} relative group`}>
+			{label}
 			<span
 				className={`h-[1px] inline-block bg-light absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ${
-					router.asPath === data.href ? "w-full" : "w-0"
+					router.asPath === href ? "w-full" : "w-0"
 				}`}
 			/>
 		</Link>
@@ -32,10 +32,10 @@ const NavBar = () => {
 		<>
 			<header className="w-full px-32 py-8 font-medium flex items-center justify-between">
 				<nav>
-					<CustomLink href="/" label="Home" class="mr-4" />
-					<CustomLink href="/about" label="About" class="mx-4" />
-					<CustomLink href="/projects" label="Projects" class="mx-4" />
-					<CustomLink href="/contact" label="Contact" class="mx-4" />
+					<CustomLink href="/" label="Home" className="mr-4" />
+					{/* <CustomLink href="/about" label="About" className="mx-4" />
+					<CustomLink href="/projects" label="Projects" className="mx-4" />
+					<CustomLink href="/contact" label="Contact" className="mx-4" /> */}
 				</nav>
 				<nav className="flex items-center gap-x-3">
 					<motion.a

@@ -9,7 +9,7 @@ const Logo = () => {
 		<div className="absolute left-[50%] top-2 translate-x-[-50%] flex items-center justify-center mt-2">
 			<MotionLink
 				href="/"
-				className="min-w-16 min-h-16 px-3 bg-light text-dark flex items-center justify-center rounded-full text-2xl font-600"
+				className="min-w-16 min-h-16 bg-light text-dark flex items-center justify-center rounded-full text-2xl font-600 border-2 border-red"
 				whileHover={{
 					scale: 1.15,
 					transition: {
@@ -20,7 +20,7 @@ const Logo = () => {
 					},
 				}}
 			>
-				Natdanai
+				GUN
 			</MotionLink>
 		</div>
 	);
