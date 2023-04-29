@@ -47,10 +47,10 @@ function Work({}: Props) {
 						</div> */}
 				</motion.div>
 				<motion.div
-					variants={fadeIn("left", 0.5)}
-					initial="hidden"
-					whileInView={"show"}
-					viewport={{ once: false, amount: 0.3 }}
+					// variants={fadeIn("left", 0.5)}
+					// initial="hidden"
+					// whileInView={"show"}
+					// viewport={{ once: false, amount: 1 }}
 					className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-10 mt-5"
 				>
 					<WorkLayout
