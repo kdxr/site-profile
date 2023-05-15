@@ -54,6 +54,11 @@ function Work({}: Props) {
 					className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-10 mt-5"
 				>
 					<WorkLayout
+						title="https://find-movie-two.vercel.app/"
+						detail="Integate to tmdb api"
+						img="./projects/find_movie.png"
+					/>
+					<WorkLayout
 						title="Develop"
 						detail="Website stock management herb"
 						img="./projects/herb_store.png"
